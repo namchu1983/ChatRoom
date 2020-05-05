@@ -29,7 +29,7 @@ namespace ReactWebApplication
         {
             services.AddDbContext<ApplicationDbContext>(
                 options =>
-                options.UseSqlite("Data Source=MusicStore.db;Cache=Shared")
+                options.UseSqlite("Data Source=mydatabase.db;Cache=Shared")
                 );
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
