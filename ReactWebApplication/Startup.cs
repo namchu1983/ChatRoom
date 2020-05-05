@@ -40,11 +40,11 @@ namespace ReactWebApplication
 
             services.AddAuthentication()
                 .AddIdentityServerJwt()
-                //.AddGoogle(options =>
-                //{
-                //    options.ClientId = "";
-                //    options.ClientSecret = "";
-                //})
+                .AddGoogle(options =>
+                {
+                    options.ClientId = Configuration["GoogleClientId"];
+                    options.ClientSecret = Configuration["GoogleClientSecret"];
+                })
                 ;
 
             services.AddControllersWithViews();
