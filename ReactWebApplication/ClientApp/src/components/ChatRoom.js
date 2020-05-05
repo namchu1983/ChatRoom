@@ -40,6 +40,7 @@ export function ChatRoom() {
             connection.invoke("SendMessage", user, sendMessage).catch(function (err) {
                 return console.error(err.toString());
             });
+            setSendMessage("");
         }
         e.preventDefault();
     }
@@ -47,7 +48,7 @@ export function ChatRoom() {
         <form onSubmit={handleSubmit}>
             <label>
                 Message : 
-              <input type="text" value={sendMessage} onChange={e => setSendMessage(e.target.value)} name="name" />
+              <textarea value={sendMessage} onChange={e => setSendMessage(e.target.value)} />
             </label>
             <input type="submit" value="Send" />
         </form>
